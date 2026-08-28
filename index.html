@@ -715,9 +715,9 @@ const openLightbox = (img) => {
   overlayImg.alt = img.alt || '';
   const title = img.dataset.placeTitle;
   const context = img.dataset.context;
-  if (typeof img.dataset.context !== 'undefined') {
+  if (context && context.trim()) {
     captionTitle.textContent = title || '';
-    captionText.textContent = context && context.trim() ? context : 'Contexto pendiente de añadir.';
+    captionText.textContent = context;
     caption.classList.add('active');
   } else {
     caption.classList.remove('active');
